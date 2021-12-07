@@ -203,7 +203,15 @@ namespace SR_TextEditor
 
         private void проРозробникаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Розроблено Галиш Олегом з групи КНТ-120", "Розробник", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           // MessageBox.Show("Розроблено Галиш Олегом з групи КНТ-120", "Розробник", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           Form_dev formDev = new Form_dev();
+           formDev.Show();
+        }
+
+        private void пошукToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_find formFind = new Form_find(this);
+            formFind.Show();
         }
     }
 }

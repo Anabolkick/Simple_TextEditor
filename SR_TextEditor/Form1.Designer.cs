@@ -44,6 +44,9 @@ namespace SR_TextEditor
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.форматToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.переносРядківToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пошукToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оРозробникуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.проРозробникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
@@ -51,8 +54,6 @@ namespace SR_TextEditor
             this.status_lable = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainTextBox = new System.Windows.Forms.RichTextBox();
             this.text_groupBox = new System.Windows.Forms.GroupBox();
-            this.оРозробникуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.проРозробникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.text_groupBox.SuspendLayout();
@@ -123,9 +124,10 @@ namespace SR_TextEditor
             // обратиШрифтToolStripMenuItem
             // 
             this.обратиШрифтToolStripMenuItem.Name = "обратиШрифтToolStripMenuItem";
-            this.обратиШрифтToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+F";
-            this.обратиШрифтToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.обратиШрифтToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.обратиШрифтToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+Alt+F";
+            this.обратиШрифтToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.F)));
+            this.обратиШрифтToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.обратиШрифтToolStripMenuItem.Text = "Обрати шрифт";
             this.обратиШрифтToolStripMenuItem.Click += new System.EventHandler(this.обратиШрифтToolStripMenuItem_Click);
             // 
@@ -134,7 +136,7 @@ namespace SR_TextEditor
             this.збільшитиШрифтToolStripMenuItem.Name = "збільшитиШрифтToolStripMenuItem";
             this.збільшитиШрифтToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+";
             this.збільшитиШрифтToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Add)));
-            this.збільшитиШрифтToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.збільшитиШрифтToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.збільшитиШрифтToolStripMenuItem.Text = "Збільшити розмір";
             this.збільшитиШрифтToolStripMenuItem.Click += new System.EventHandler(this.збільшитиШрифтToolStripMenuItem_Click);
             // 
@@ -143,7 +145,7 @@ namespace SR_TextEditor
             this.зменшитиШрифтToolStripMenuItem.Name = "зменшитиШрифтToolStripMenuItem";
             this.зменшитиШрифтToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl-";
             this.зменшитиШрифтToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Subtract)));
-            this.зменшитиШрифтToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.зменшитиШрифтToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.зменшитиШрифтToolStripMenuItem.Text = "Зменшити розмір";
             this.зменшитиШрифтToolStripMenuItem.Click += new System.EventHandler(this.зменшитиШрифтToolStripMenuItem_Click);
             // 
@@ -153,7 +155,7 @@ namespace SR_TextEditor
             this.FontSizeTool,
             this.toolStripMenuItem2});
             this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(209, 22);
+            this.toolStripComboBox1.Size = new System.Drawing.Size(220, 22);
             this.toolStripComboBox1.Text = "Обрати певний розмір";
             // 
             // FontSizeTool
@@ -171,7 +173,8 @@ namespace SR_TextEditor
             // форматToolStripMenuItem
             // 
             this.форматToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.переносРядківToolStripMenuItem});
+            this.переносРядківToolStripMenuItem,
+            this.пошукToolStripMenuItem});
             this.форматToolStripMenuItem.Name = "форматToolStripMenuItem";
             this.форматToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.форматToolStripMenuItem.Text = "Формат";
@@ -183,9 +186,35 @@ namespace SR_TextEditor
             this.переносРядківToolStripMenuItem.Name = "переносРядківToolStripMenuItem";
             this.переносРядківToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+W";
             this.переносРядківToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.переносРядківToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.переносРядківToolStripMenuItem.Text = "Перенос рядків";
+            this.переносРядківToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.переносРядківToolStripMenuItem.Text = "Перенесення рядків";
             this.переносРядківToolStripMenuItem.Click += new System.EventHandler(this.переносРядківToolStripMenuItem_Click);
+            // 
+            // пошукToolStripMenuItem
+            // 
+            this.пошукToolStripMenuItem.Name = "пошукToolStripMenuItem";
+            this.пошукToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+F";
+            this.пошукToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.пошукToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.пошукToolStripMenuItem.Text = "Пошук";
+            this.пошукToolStripMenuItem.Click += new System.EventHandler(this.пошукToolStripMenuItem_Click);
+            // 
+            // оРозробникуToolStripMenuItem
+            // 
+            this.оРозробникуToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.проРозробникаToolStripMenuItem});
+            this.оРозробникуToolStripMenuItem.Name = "оРозробникуToolStripMenuItem";
+            this.оРозробникуToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.оРозробникуToolStripMenuItem.Text = "Інформація";
+            // 
+            // проРозробникаToolStripMenuItem
+            // 
+            this.проРозробникаToolStripMenuItem.Name = "проРозробникаToolStripMenuItem";
+            this.проРозробникаToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+I";
+            this.проРозробникаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.проРозробникаToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.проРозробникаToolStripMenuItem.Text = "Про програму";
+            this.проРозробникаToolStripMenuItem.Click += new System.EventHandler(this.проРозробникаToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -223,23 +252,6 @@ namespace SR_TextEditor
             this.text_groupBox.Size = new System.Drawing.Size(800, 404);
             this.text_groupBox.TabIndex = 3;
             this.text_groupBox.TabStop = false;
-            // 
-            // оРозробникуToolStripMenuItem
-            // 
-            this.оРозробникуToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.проРозробникаToolStripMenuItem});
-            this.оРозробникуToolStripMenuItem.Name = "оРозробникуToolStripMenuItem";
-            this.оРозробникуToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.оРозробникуToolStripMenuItem.Text = "Інформація";
-            // 
-            // проРозробникаToolStripMenuItem
-            // 
-            this.проРозробникаToolStripMenuItem.Name = "проРозробникаToolStripMenuItem";
-            this.проРозробникаToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+I";
-            this.проРозробникаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.проРозробникаToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.проРозробникаToolStripMenuItem.Text = "Про розробника";
-            this.проРозробникаToolStripMenuItem.Click += new System.EventHandler(this.проРозробникаToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -286,10 +298,11 @@ namespace SR_TextEditor
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel status_lable;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.RichTextBox mainTextBox;
         private System.Windows.Forms.GroupBox text_groupBox;
         private System.Windows.Forms.ToolStripMenuItem оРозробникуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem проРозробникаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem пошукToolStripMenuItem;
+        public System.Windows.Forms.RichTextBox mainTextBox;
     }
 }
 
