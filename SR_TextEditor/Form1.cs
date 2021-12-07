@@ -21,7 +21,26 @@ namespace SR_TextEditor
             status_lable.Text = $"Font: {font.Name} | Size: {font.Size} | Bold: {font.Bold} | Italic: {font.Italic}";
 
         }
+
         FontConverter converter = new FontConverter();
+        void SaveGalyshFormat()
+        {
+            string path = saveFileDialog1.FileName;
+            List<string> strList = new List<string>();
+            strList.Add("FF:" + converter.ConvertToString(mainTextBox.Font));
+            strList.Add("WW:" + mainTextBox.WordWrap);
+            strList.Add(mainTextBox.Text);
+            File.WriteAllLines(path, strList);
+        }
+
+        void SaveTxtFormat()
+        {
+            string path = saveFileDialog1.FileName;
+            List<string> strList = new List<string>();
+            strList.Add(mainTextBox.Text);
+            File.WriteAllLines(path, strList);
+        }
+ 
         private void відкритиНовийФайлToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Galysh|*.galysh|TXT|*.txt";
@@ -56,24 +75,7 @@ namespace SR_TextEditor
                 }
             }
             this.Text = $"{openFileDialog1.SafeFileName} - Galysh Text Editor";
-        }
-
-        void SaveGalyshFormat()
-        {
-            string path = saveFileDialog1.FileName;
-            List<string> strList = new List<string>();
-            strList.Add("FF:" + converter.ConvertToString(mainTextBox.Font));
-            strList.Add("WW:" + mainTextBox.WordWrap);
-            strList.Add(mainTextBox.Text);
-            File.WriteAllLines(path, strList);
-        }
-
-        void SaveTxtFormat()
-        {
-            string path = saveFileDialog1.FileName;
-            List<string> strList = new List<string>();
-            strList.Add(mainTextBox.Text);
-            File.WriteAllLines(path, strList);
+            openFileDialog1.FileName = "";
         }
 
         private void зберігтиФайлToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,12 +88,12 @@ namespace SR_TextEditor
 
             var name = saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.LastIndexOf('\\') + 1);
             this.Text = $"{name} - Galysh Text Editor";
+            saveFileDialog1.FileName = "";
         }
 
         private void зберігтиФайлЯкToolStripMenuItem_Click(object sender, EventArgs e) //наследованеи
         {
             saveFileDialog1.Filter = "Galysh|*.galysh|TXT|*.txt";
-
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 switch (saveFileDialog1.FilterIndex)
@@ -110,6 +112,7 @@ namespace SR_TextEditor
 
             var name = saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.LastIndexOf('\\') + 1);
             this.Text = $"{name} - Galysh Text Editor";
+            saveFileDialog1.FileName = "";
         }
 
         private void обратиШрифтToolStripMenuItem_Click(object sender, EventArgs e)
