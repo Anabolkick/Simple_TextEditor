@@ -160,6 +160,7 @@ namespace SR_TextEditor
             // 
             // FontSizeTool
             // 
+            this.FontSizeTool.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FontSizeTool.Name = "FontSizeTool";
             this.FontSizeTool.Size = new System.Drawing.Size(100, 23);
             // 

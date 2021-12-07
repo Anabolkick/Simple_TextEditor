@@ -29,6 +29,7 @@ namespace SR_TextEditor
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_find));
             this.textBox_find = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.found_btn = new System.Windows.Forms.Button();
@@ -123,6 +124,7 @@ namespace SR_TextEditor
             this.Controls.Add(this.found_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_find);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(400, 230);
             this.MinimumSize = new System.Drawing.Size(400, 230);
             this.Name = "Form_find";
